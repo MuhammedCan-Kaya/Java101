@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number,sifre, yeniSifre;
+        System.out.print(" Lütfen şifrenizi giriniz: ");
+        sifre = scan.nextInt();
+
+        if(sifre == 3688){
+            System.out.print(" Şifreniz doğru. ");
+        }else if(sifre != 3688){
+            System.out.print(" Şifrenizi yanlış. Şifrenizi sıfırlamak ister misiniz? ");
+            System.out.print(" 1- Evet\t2- Hayır\n Seçiminiz: ");
+            number = scan.nextInt();
+            if (number == 1) {
+                System.out.print(" Yeni şifrenizi giriniz: ");
+                yeniSifre = scan.nextInt();
+                switch (yeniSifre) {
+                    case 3688:
+                        System.out.print(" Şifre oluşturulamadı, lütfen başka şifre giriniz. ");
+                        break;
+                    default:
+                        System.out.print(" Şifre başarı ile oluşturuldu. ");
+                        break;
+                }
+            }else{
+                System.out.print(" Program sonlandı. ");
+            }
+        }
+
+    }
+}
