@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print(" Limit belirleyiniz: ");
+        int limit = input.nextInt(), power1 = 1, power2 = 1;
+
+        System.out.println(" Dördün kuvvetleri: " + " Beşin kuvvetleri: ");
+        while (power1 <= limit && power2 <= limit) {
+            power1 *= 4;
+            power2 *= 5;
+            if (power1 <= limit && power2 <= limit) {
+                System.out.println("\t" + power1 + "\t\t\t\t\t" + power2);
+            }else if (power1 <= limit) {
+                System.out.println("\t" + power1);
+            }else if (power2 <= limit) {
+                System.out.println("\t\t\t\t\t" + power2);
+            }
+        }
+    }
+}
