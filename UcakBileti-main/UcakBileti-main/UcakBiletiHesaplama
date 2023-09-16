@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int ticketType, distance, age;
+        double discountedPrice;
+        Scanner input = new Scanner(System.in);
+        System.out.println(" Please enter your information.");
+        System.out.print(" Age: ");
+        age = input.nextInt();
+        System.out.print(" 1- Single 2- Return\n Note: We have %20 discount on return tickets.\n Which type? ");
+        ticketType = input.nextInt();
+        System.out.print(" Distance(km): ");
+        distance = input.nextInt();
+
+        double price = distance * 0.10;
+
+        if (age > 0 && distance > 0){
+
+            if (age < 12) {
+                price -= (price * 1/2);
+            }else if (age > 12 && age < 24) {
+                price -= (price * 1/10);
+            }else if (age > 65) {
+                price -= (price * 3/10);
+            }
+            switch (ticketType) {
+                case 1:
+                    System.out.println(" Ticket price = " + price);
+                    break;
+                case 2:
+                    discountedPrice = price - (price * 1/2);
+                System.out.println(" Ticket price = " + discountedPrice);
+            }
+        }else {
+            System.out.print(" Please check your information.");
+        }
+    }
+}
